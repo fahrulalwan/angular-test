@@ -22,7 +22,7 @@
   </button>
 
   <ng-container *ngIf="{value: accountTrayState$ | async} as trayState">
-    <div class="relative pl-20" appOutsideClick [trayState]="trayState.value" (clickOutside)="closeTray()">
+    <div class="relative pl-36" appOutsideClick [trayState]="trayState.value" (clickOutside)="closeTray()">
       <button type="button" class="text-2xl mr-2" (click)="trayState.value ? closeTray() : openTray()">
         <span>Hi, Ikhsan</span>
         <svg
@@ -35,18 +35,20 @@
           stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
-    </button>
+      </button>
 
       <div
         *ngIf="trayState.value"
         class="absolute bottom-0 right-0 rounded-lg shadow-xl lg p-7 transform-gpu translate-y-full bg-white w-full">
-        <p class="font-bold mb-6">Role: Business Owner</p>
-        <button
-          type="button"
-          (click)="onLogout()"
-          class="rounded-md text-white bg-blue-900 w-1/2 ml-auto py-1">
-          Logout
-        </button>
+        <p class="font-bold mb-8">Role: Business Owner</p>
+        <div class="flex w-full">
+          <button
+            type="button"
+            (click)="onLogout()"
+            class="rounded-md text-white bg-blue-900 w-2/3 ml-auto py-2">
+            Logout
+          </button>
+        </div>
       </div>
     </div>
   </ng-container>
