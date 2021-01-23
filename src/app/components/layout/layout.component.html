@@ -1,9 +1,9 @@
-<section class="flex bg-gray-200">
-  <app-sidebar [isOpen]="sidebarState$ | async"></app-sidebar>
+<section class="flex bg-gray-200" *ngIf="{value: sidebarState$ | async} as sidebarState">
+  <app-sidebar [isOpen]="sidebarState.value"></app-sidebar>
   <div class="w-full">
     <app-header
-      (toggle)="toggleSidebarState($event)"
-      [sidebarState]="sidebarState$ | async"
+      (sidebarToggle)="toggleSidebarState()"
+      [sidebarState]="sidebarState.value"
     ></app-header>
     <app-navigation></app-navigation>
 
