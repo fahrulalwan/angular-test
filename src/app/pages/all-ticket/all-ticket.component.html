@@ -49,25 +49,25 @@
 <table class="table-auto w-full mt-6 border border-collapse border-white">
   <thead class="text-white bg-gray-500 text-left text-xl">
   <tr>
-    <th class="border border-white px-2 py-1">Ticket ID</th>
-    <th class="border border-white px-2 py-1">Ticket Name</th>
-    <th class="border border-white px-2 py-1">Reporter</th>
-    <th class="border border-white px-2 py-1">Create Date</th>
-    <th class="border border-white px-2 py-1">Status</th>
-    <th class="border border-white px-2 py-1">Activity</th>
-    <th class="border border-white px-2 py-1">Product Stream</th>
-    <th class="border border-white px-2 py-1">Action</th>
+    <th class="border border-white px-3 py-2">Ticket ID</th>
+    <th class="border border-white px-3 py-2">Ticket Name</th>
+    <th class="border border-white px-3 py-2">Reporter</th>
+    <th class="border border-white px-3 py-2">Create Date</th>
+    <th class="border border-white px-3 py-2">Status</th>
+    <th class="border border-white px-3 py-2">Activity</th>
+    <th class="border border-white px-3 py-2">Product Stream</th>
+    <th class="border border-white px-3 py-2">Action</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let ticket of dummyData$ | async" class="odd:bg-blue-100 even:bg-gray-100 hover:bg-blue-200">
-    <td class="border border-white px-2 py-1">
+    <td class="border border-white px-3 py-2">
       <a class="cursor-pointer text-blue-600">{{ ticket.ticketId }}</a>
     </td>
-    <td class="border border-white px-2 py-1">{{ ticket.ticketName }}</td>
-    <td class="border border-white px-2 py-1">{{ ticket.reporter }}</td>
-    <td class="border border-white px-2 py-1">{{ ticket.createDate }}</td>
-    <td class="border border-white px-2 py-1">
+    <td class="border border-white px-3 py-2">{{ ticket.ticketName }}</td>
+    <td class="border border-white px-3 py-2">{{ ticket.reporter }}</td>
+    <td class="border border-white px-3 py-2">{{ ticket.createDate }}</td>
+    <td class="border border-white px-3 py-2">
       <div
         class="rounded-full w-5 h-5 mx-auto"
         [ngClass]="
@@ -81,9 +81,17 @@
           "
       ></div>
     </td>
-    <td class="border border-white px-2 py-1">{{ ticket.activity }}</td>
-    <td class="border border-white px-2 py-1">{{ ticket.productStream }}</td>
-    <td class="border border-white px-2 py-1">{{ ticket.action }}</td>
+    <td class="border border-white px-3 py-2">
+      <span>{{ ticket.activity }}</span>
+      <svg *ngIf="ticket.status === 'red'" class="text-red-600 inline-flex ml-2" width="25" height="25"
+           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd"
+              d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+              clip-rule="evenodd" />
+      </svg>
+    </td>
+    <td class="border border-white px-3 py-2">{{ ticket.productStream }}</td>
+    <td class="border border-white px-3 py-2">{{ ticket.action }}</td>
   </tr>
   </tbody>
 </table>
