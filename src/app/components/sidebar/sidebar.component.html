@@ -1,0 +1,65 @@
+<div class="h-screen bg-blue-900" [class.max-w-xs]="isOpen">
+  <a routerLink="/">
+    <img
+      [src]="isOpen ? '/assets/images/axiata_logo.webp' : '/assets/images/axiata_logo_mini.webp'"
+      alt="axiata logo"
+      [ngClass]="isOpen ? 'pt-3 px-10' : 'w-24 pt-3 px-2'"
+    />
+  </a>
+  <nav class="flex flex-col" [ngClass]="isOpen ? 'mt-9' : 'mt-4'">
+    <a
+      routerLink="/all-ticket"
+      routerLinkActive="bg-blue-600"
+      class="block hover:bg-blue-400 text-white text-2xl font-bold px-5 py-3"
+      [ngClass]="!isOpen && 'flex justify-center'"
+    >
+      <svg
+        class="inline-flex"
+        width="40"
+        height="40"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"
+        />
+      </svg>
+      <span *ngIf="isOpen" class="ml-3">All Ticket</span>
+    </a>
+    <a
+      routerLink="/my-ticket"
+      routerLinkActive="bg-blue-600"
+      class="block hover:bg-blue-400 text-white text-2xl font-bold px-5 py-3"
+      [ngClass]="!isOpen && 'flex justify-center'"
+    >
+      <svg
+        class="inline-flex"
+        width="40"
+        height="40"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+        />
+      </svg>
+      <span *ngIf="isOpen" class="ml-3">My Ticket</span>
+    </a>
+  </nav>
+</div>

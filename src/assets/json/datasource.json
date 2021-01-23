@@ -1,0 +1,52 @@
+[
+  {
+    "ticketId": "ABC123",
+    "ticketName": "Bronet Axis",
+    "reporter": "Ikhsan",
+    "createDate": "2020-09-04",
+    "status": "green",
+    "activity": "Initial Ticket",
+    "productStream": "AXIS",
+    "action": ""
+  },
+  {
+    "ticketId": "ABC234",
+    "ticketName": "Sisnet Axis",
+    "reporter": "Sunarto",
+    "createDate": "2020-06-01",
+    "status": "green",
+    "activity": "Approved by BRM",
+    "productStream": "PREPAID",
+    "action": ""
+  },
+  {
+    "ticketId": "ABC345",
+    "ticketName": "Internet Axis",
+    "reporter": "Sunardi",
+    "createDate": "2020-09-02",
+    "status": "yellow",
+    "activity": "Waiting Approval",
+    "productStream": "POSTPAID",
+    "action": ""
+  },
+  {
+    "ticketId": "ABC456",
+    "ticketName": "Gamers Package",
+    "reporter": "Sunjaya",
+    "createDate": "2020-07-19",
+    "status": "red",
+    "activity": "Withdrew by BRM",
+    "productStream": "VAS",
+    "action": ""
+  },
+  {
+    "ticketId": "ABC567",
+    "ticketName": "Paket Mantep",
+    "reporter": "Kimihime",
+    "createDate": "2020-08-22",
+    "status": "green",
+    "activity": "Approved by Tester",
+    "productStream": "AXIS",
+    "action": ""
+  }
+]

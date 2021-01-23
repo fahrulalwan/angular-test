@@ -1,0 +1,14 @@
+<section class="flex bg-gray-200">
+  <app-sidebar [isOpen]="sidebarState$ | async"></app-sidebar>
+  <div class="w-full">
+    <app-header
+      (toggle)="toggleSidebarState($event)"
+      [sidebarState]="sidebarState$ | async"
+    ></app-header>
+    <app-navigation></app-navigation>
+
+    <main class="mx-7 mt-5">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</section>
