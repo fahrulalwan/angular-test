@@ -7,34 +7,37 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AppService {
-  // TODO: revert isLogin to false
-  isLogin = true;
+  isLogin = false;
 
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  login() {
+  checkLogin(): boolean {
+    const isLogin = localStorage.getItem('isLogin');
+    if (isLogin) {
+      this.isLogin = JSON.parse(isLogin);
+    }
+    return this.isLogin;
+  }
+
+  login(): void {
     this.isLogin = true;
+    localStorage.setItem('isLogin', 'true');
     void this.router.navigate(['/']);
   }
 
-  logout() {
+  logout(): void {
     this.isLogin = false;
+    localStorage.setItem('isLogin', 'false');
     void this.router.navigate(['/login']);
   }
 
   getAllTicket(filterBy?: Filter, filterValue?: string): Observable<Datasource[]> {
-    return this.http
-      .get<Datasource[]>('/assets/json/datasource.json')
+    return this.http.get<Datasource[]>('/assets/json/datasource.json')
       .pipe(
         map((tickets) =>
           filterBy
-            ? tickets.filter(
-            (ticket) => {
-              console.log(ticket[filterBy].toLowerCase(), filterValue.toLowerCase());
-              return ticket[filterBy].toLowerCase().includes(filterValue.toLowerCase());
-            }
-            )
+            ? tickets.filter(ticket => ticket[filterBy].toLowerCase().includes(filterValue.toLowerCase()))
             : tickets
         )
       );
