@@ -5,7 +5,7 @@
     "ng": "ng",
     "ngtw": "ngtw",
     "start": "ng serve & ngtw watch",
-    "build": "ngtw build --purge && ng build --prod",
+    "build": "npm run ngtw build --purge && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

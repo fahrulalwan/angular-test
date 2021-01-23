@@ -1,8 +1,8 @@
 module.exports = {
   // Tailwind Paths
-  configJS: '/home/malwan/Documents/Workspaces/Personal/angular-test/tailwind.config.js',
-  sourceCSS: '/home/malwan/Documents/Workspaces/Personal/angular-test/src/tailwind.css',
-  outputCSS: '/home/malwan/Documents/Workspaces/Personal/angular-test/src/tailwind-output.css',
+  configJS: "./tailwind.config.js",
+  sourceCSS: "./src/tailwind.css",
+  outputCSS: "./src/tailwind-output.css",
   // Sass
   sass: false,
   // PurgeCSS Settings
