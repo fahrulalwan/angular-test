@@ -35,7 +35,7 @@ export class AppService {
   getAllTicket(filterBy?: Filter, filterValue?: string): Observable<Datasource[]> {
     return this.http.get<Datasource[]>('/assets/json/datasource.json')
       .pipe(
-        map((tickets) =>
+        map(tickets =>
           filterBy
             ? tickets.filter(ticket => ticket[filterBy].toLowerCase().includes(filterValue.toLowerCase()))
             : tickets

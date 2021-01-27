@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,12 +6,10 @@ import { Router } from '@angular/router';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css'],
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
   constructor(private router: Router) {}
 
-  ngOnInit() {}
-
   parseUrlNavigation(): string {
-    return this.router.url !== '/' ? this.router.url.replace('/', ' > ') : '';
+    return this.router.url !== '/' ? this.router.url.replace('-', ' ').replace('/', ' > ') : '';
   }
 }
